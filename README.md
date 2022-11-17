@@ -1,2 +1,2 @@
 # actor-profile-website
-Actor profile web site
+Profile website for introducing actor
