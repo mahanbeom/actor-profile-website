@@ -1,0 +1,5 @@
+<swiper [navigation]="true" class="mySwiper">
+  <ng-template swiperSlide *ngFor="let imgPath of imgList">
+    <img [src]="imgPath">
+  </ng-template>
+</swiper>
