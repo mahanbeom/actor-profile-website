@@ -1,7 +1,7 @@
 
 @import "swiper/css";
-@import "~swiper/css/effect-coverflow";
-@import "~swiper/css/pagination";
+@import "swiper/css/effect-coverflow";
+@import "swiper/css/pagination";
 @import "swiper/css/navigation";
 
 .home-container {
@@ -57,7 +57,7 @@
 
   .second-slide {
     .swiper {
-      width: 50%;
+      width: 80%;
       height: fit-content;
       padding-top: 50px;
       padding-bottom: 50px;
@@ -71,6 +71,10 @@
     .swiper-slide img {
       display: block;
       width: 100%;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      color: rgba(255, 255, 255, 0.7);
     }
   }
 }
@@ -116,4 +120,8 @@
 .title {
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-pagination-bullet-active {
+  background: burlywood;
 }
