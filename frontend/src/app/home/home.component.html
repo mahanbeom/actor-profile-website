@@ -1,5 +1,102 @@
-<swiper [navigation]="true" class="mySwiper">
-  <ng-template swiperSlide *ngFor="let imgPath of imgList">
-    <img [src]="imgPath">
-  </ng-template>
-</swiper>
+<div class="home-container" fxFlexFill fxLayout="column" fxLayoutAlign="center center">
+
+  <swiper
+      [direction]="'vertical'"
+      [slidesPerView]="1"
+      [spaceBetween]="30"
+      [mousewheel]="true"
+      [pagination]="{
+          clickable: true
+      }"
+      class="swiper"
+  >
+    <ng-template swiperSlide>
+      <div fxFlex="33" class="info-box">
+          <h1>KIM SEUNG BOO</h1>
+          <div class="name-box" fxLayout="row" fxLayoutAlign="center center">
+            김 승 부
+          </div>
+        <mat-divider></mat-divider>
+        <span class="info-text">
+          - 나이 : 1996년생
+        </span>
+        <span class="info-text">
+          - 키 / 체중 : 179cm / 80kg
+        </span>
+        <span class="info-text">
+          - 특기 : 수영, 노래, 검도
+        </span>
+        <span class="info-text">
+          - Email : rlatmdqn1234@naver.com
+        </span>
+        <span class="info-text">
+          - Phone : 010-8784-1738
+        </span>
+      </div>
+
+      <div fxFlex="33" class="first-slide-img"></div>
+
+      <div fxFlex="31" fxLayout="column" fxLayoutAlign="center end" fxLayoutGap="5rem">
+        <div class="carrer-box">
+          <span class="carrer-title">드라마</span>
+          <mat-divider></mat-divider>
+          <span class="carrer-text">
+            - [법쩐] 성태 패거리 역 (방영 예정)
+          </span>
+          <span class="carrer-text">
+            - [금혼령] 산적역 (방영 예정)
+          </span>
+        </div>
+
+        <div class="carrer-box">
+          <span class="carrer-title">단편 영화</span>
+          <mat-divider></mat-divider>
+          <span class="carrer-text">
+            - [완두코니아] 주연
+          </span>
+          <span class="carrer-text">
+            - [그것] 주연
+          </span>
+          <span class="carrer-text">
+            - [연기] 주조연
+          </span>
+          <span class="carrer-text">
+            - [the moment] 조연
+          </span>
+          <span class="carrer-text">
+            - [3월 22일] 주연
+          </span>
+          <span class="carrer-text">
+            - [피아노] 주연
+          </span>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template class="second-slide" swiperSlide>
+      <swiper 
+          [navigation]="true"
+          [effect]="'coverflow'"
+          [grabCursor]="true"
+          [centeredSlides]="true"
+          [slidesPerView]="'auto'"
+          [coverflowEffect]="{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true
+          }"
+          [pagination]="true"
+          class="mySwiper"
+        >
+          <ng-template class="second-swiper-slide" swiperSlide *ngFor="let imgPath of imgList">
+            <img [src]="imgPath">
+          </ng-template>
+        </swiper>
+    </ng-template>
+    <ng-template swiperSlide>
+      
+    </ng-template>
+  </swiper>
+  
+</div>

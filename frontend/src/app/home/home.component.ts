@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import SwiperCore, { Navigation } from "swiper";
+import SwiperCore, { Navigation, EffectCoverflow, Pagination, Mousewheel } from "swiper";
 
 // install Swiper modules
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, EffectCoverflow, Pagination, Mousewheel]);
 
 @Component({
   selector: 'app-home',

@@ -1,3 +1,10 @@
 .page {
   height: 100%;
+  background-color: whitesmoke;
+
+  .header {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
 }

@@ -1,35 +1,119 @@
 
 @import "swiper/css";
+@import "~swiper/css/effect-coverflow";
+@import "~swiper/css/pagination";
 @import "swiper/css/navigation";
 
-.swiper {
+.home-container {
+  .first-slide-img {
+    background: url("../../assets/images/photo2.jpg") no-repeat;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+  }
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3vh;
+    color: white;
+    margin-left: 7vw;
+    margin-right: 3vw;
+
+    h1 {
+      font-size: 4rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .name-box {
+      font-size: 3rem;
+      text-align: center;
+    }
+    .info-text {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  .carrer-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3vh;
+    color: white;
+    margin-right: 7vw;
+
+    .carrer-title {
+      font-size: 2rem
+    }
+
+    .carrer-text {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  .second-slide {
+    .swiper {
+      width: 50%;
+      height: fit-content;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+    }
+    
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.home-container::before {
+  position: fixed;
+  content: "";
+  background: #37372f;
   width: 100%;
   height: 100%;
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+.swiper {
+  width: 100%;
+  height: 90vh;
+}
 
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+.swiper-slide {
+  color: #fff;
+  background-color: transparent;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
+  gap: 1vh;
+}
+
+.swiper-slide:first-child {
+  justify-content: flex-end;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+}
+
+.mat-divider {
+  width: 100%;
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.title {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
 }
