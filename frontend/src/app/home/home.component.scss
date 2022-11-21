@@ -5,6 +5,11 @@
 @import "swiper/css/navigation";
 
 .home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   .info-box {
     display: flex;
     flex-direction: column;

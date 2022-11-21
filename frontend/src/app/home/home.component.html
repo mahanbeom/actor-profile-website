@@ -1,4 +1,4 @@
-<div class="home-container" fxFlexFill fxLayout="column" fxLayoutAlign="center center">
+<div class="home-container" fxFlexFill>
 
   <swiper
       [direction]="'vertical'"
@@ -17,20 +17,8 @@
             김 승 부
           </div>
         <mat-divider></mat-divider>
-        <span class="info-text">
-          - 나이 : 1996년생
-        </span>
-        <span class="info-text">
-          - 키 / 체중 : 179cm / 80kg
-        </span>
-        <span class="info-text">
-          - 특기 : 수영, 노래, 검도
-        </span>
-        <span class="info-text">
-          - Email : rlatmdqn1234@naver.com
-        </span>
-        <span class="info-text">
-          - Phone : 010-8784-1738
+        <span class="info-text" *ngFor="let info of infoList">
+          {{ info }}
         </span>
       </div>
 
@@ -41,34 +29,16 @@
         <div class="carrer-box">
           <span class="carrer-title">드라마</span>
           <mat-divider></mat-divider>
-          <span class="carrer-text">
-            - [법쩐] 성태 패거리 역 (방영 예정)
-          </span>
-          <span class="carrer-text">
-            - [금혼령] 산적역 (방영 예정)
+          <span class="carrer-text" *ngFor="let drama of dramaList">
+            {{ drama }}
           </span>
         </div>
 
         <div class="carrer-box">
           <span class="carrer-title">단편 영화</span>
           <mat-divider></mat-divider>
-          <span class="carrer-text">
-            - [완두코니아] 주연
-          </span>
-          <span class="carrer-text">
-            - [그것] 주연
-          </span>
-          <span class="carrer-text">
-            - [연기] 주조연
-          </span>
-          <span class="carrer-text">
-            - [the moment] 조연
-          </span>
-          <span class="carrer-text">
-            - [3월 22일] 주연
-          </span>
-          <span class="carrer-text">
-            - [피아노] 주연
+          <span class="carrer-text" *ngFor="let movie of movieList">
+            {{ movie }}
           </span>
         </div>
 
