@@ -2,7 +2,7 @@
 
 Profile website for introducing actor
 
-# Link
+# Demo
 
 https://kimseungboo.netlify.app
 
