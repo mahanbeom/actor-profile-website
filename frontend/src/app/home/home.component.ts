@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { fromEvent, Observable, Subscription } from 'rxjs';
 import SwiperCore, { Navigation, EffectCoverflow, Pagination, Mousewheel } from "swiper";
 
 // install Swiper modules
@@ -35,9 +36,29 @@ export class HomeComponent implements OnInit {
     "- [피아노] 주연"
   ];
 
+  mobileScreen: boolean = true;
+
+  resizeObservable: Observable<Event> | null = null;
+	resizeSubscription: Subscription | null = null;
+
   constructor() { }
 
   ngOnInit(): void {
+    if (window.innerWidth > 800) {
+      this.mobileScreen = false;
+		}
+
+    /* 창 크기를 추적하여 800px 이상의 창크기에서는 웹 스크린,
+		  이하는 모바일 스크린이 보이도록 설정. */
+		this.resizeObservable = fromEvent(window, 'resize');
+		this.resizeSubscription = this.resizeObservable.subscribe( () => {
+			if(window.innerWidth > 800) {
+       this.mobileScreen = false;
+			} else {
+        this.mobileScreen = true;
+			}
+		});
+
     for(let i = 0; i < 8; i ++) {
       this.imgList[i] = `../assets/images/photo${i+1}.jpg`;
     }

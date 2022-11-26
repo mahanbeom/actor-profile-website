@@ -10,7 +10,7 @@
       }"
       class="swiper"
   >
-    <ng-template swiperSlide>
+    <ng-template swiperSlide *ngIf="!mobileScreen">
       <div class="info-container">
           <h1>KIM SEUNG BOO</h1>
           <div class="name-box">
@@ -50,6 +50,34 @@
         </div>
       </div>
     </ng-template>
+    <ng-template class="m-first-slide" swiperSlide *ngIf="mobileScreen">
+      <h1>Kim Seung Boo</h1>
+      <div class="background">
+        <div class="content-container">
+          <div class="m-info-box">
+            <span *ngFor="let info of infoList">
+              {{ info }}
+            </span>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="m-carrer-box">
+            <span *ngFor="let drama of dramaList">
+              {{ drama }}
+            </span>
+            <span *ngFor="let movie of movieList">
+              {{ movie }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="move-slide-box">
+        <mat-icon>
+          keyboard_double_arrow_down
+        </mat-icon>
+        <span>프로필 사진 슬라이드로 이동</span>
+      </div>
+    </ng-template>
     <ng-template class="second-slide" swiperSlide>
       <swiper 
           [navigation]="true"
@@ -73,9 +101,9 @@
           </ng-template>
         </swiper>
     </ng-template>
-    <ng-template swiperSlide>
+    <!-- <ng-template swiperSlide>
       <h1>촬영 영상</h1>
-    </ng-template>
+    </ng-template> -->
   </swiper>
   
 </div>
