@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { SwiperModule } from 'swiper/angular';
 
 // material modules
@@ -30,7 +29,6 @@ const materialModules = [
 
 const modules = [
   HttpClientModule,
-  FlexLayoutModule,
   SwiperModule,
   ...materialModules
 ];
