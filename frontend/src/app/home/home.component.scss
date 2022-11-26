@@ -161,8 +161,8 @@
         content: "";
         background: url("../../assets/images/main_img.jpg") no-repeat;
         opacity: 0.5;
-        background-size: cover;
-        background-position: top;
+        background-size: contain;
+        background-position: center;
       }
 
       .content-container {
