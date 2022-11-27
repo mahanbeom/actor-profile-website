@@ -13,7 +13,7 @@ export class GlobalNavBarComponent implements OnInit {
   }
 
   moveToLink(url: string) {
-    window.open(url, '_blank');
+    window.open(url, '_self');
   }
 
 }
