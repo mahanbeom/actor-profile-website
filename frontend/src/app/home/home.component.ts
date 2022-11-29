@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
 		});
 
     for(let i = 0; i < 8; i ++) {
-      this.imgList[i] = `../assets/images/photo${i+1}.jpg`;
+      this.imgList[i] = `../assets/images/photo_${i+1}.jpg`;
     }
   }
 
