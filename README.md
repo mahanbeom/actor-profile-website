@@ -9,7 +9,3 @@ https://kimseungboo.netlify.app
 # Stack
 
 Angular 14
-
-# Deploy
-
-Netlify
