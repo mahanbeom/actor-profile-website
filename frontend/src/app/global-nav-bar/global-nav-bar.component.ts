@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -32,15 +32,13 @@ export class GlobalNavBarComponent implements OnInit {
       "password": "akgksqja1!"
     };
 
-    this.http.post(this.url + "users/login", signInForm, {
-      headers: this.formHeaders()
-    }).subscribe({
-      next: (res) => {
-        console.log(res);
-      },
-      error: (err) => {
-        console.log(err);
-      }
+    this.http.post<any>(this.url + "users/login", signInForm, {
+      headers: this.formHeaders(),
+      observe: 'response'
+    }).subscribe((response: HttpResponse<any>) => {
+      console.log(response);
+      const setCookie = response.headers.get(`set-cookie`);
+      console.log(setCookie);
     })
   }
 
