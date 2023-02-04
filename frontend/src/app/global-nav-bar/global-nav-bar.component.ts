@@ -39,6 +39,7 @@ export class GlobalNavBarComponent implements OnInit {
       console.log(response);
       const setCookie = response.headers.get(`set-cookie`);
       console.log(setCookie);
+      document.cookie = `name=`
     })
   }
 
