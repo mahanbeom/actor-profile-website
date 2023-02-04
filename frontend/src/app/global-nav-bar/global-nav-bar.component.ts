@@ -26,7 +26,7 @@ export class GlobalNavBarComponent implements OnInit {
     return formHeader;
   }
 
-  apiTest() {
+  login() {
     const signInForm = {
       "email": "akgksqja@gmail.com",
       "password": "akgksqja1!"
@@ -42,6 +42,9 @@ export class GlobalNavBarComponent implements OnInit {
         console.log(err);
       }
     })
+  }
+
+  apiTest() {
 
     this.http.get(this.url).subscribe({
       next: (res) => {
