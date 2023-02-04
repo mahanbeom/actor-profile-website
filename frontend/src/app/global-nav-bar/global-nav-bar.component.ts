@@ -28,7 +28,7 @@ export class GlobalNavBarComponent implements OnInit {
 
   apiTest() {
     const signInForm = {
-      "email": "akgksqja@gamil.com",
+      "email": "akgksqja@gmail.com",
       "password": "akgksqja1!"
     };
 
