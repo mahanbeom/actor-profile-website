@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GlobalNavBarComponent implements OnInit {
 
+  readonly url = "https://3stb21askl.execute-api.ap-northeast-2.amazonaws.com/dev/";
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -17,13 +18,32 @@ export class GlobalNavBarComponent implements OnInit {
     window.open(url, '_self');
   }
 
+  private formHeaders(): HttpHeaders {
+    const formHeader = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'withCredentials': 'true'
+    });
+    return formHeader;
+  }
+
   apiTest() {
     const signInForm = {
       "email": "akgksqja@gamil.com",
       "password": "akgksqja1!"
     };
 
-    this.http.get("https://3stb21askl.execute-api.ap-northeast-2.amazonaws.com/dev/").subscribe({
+    this.http.post(this.url + "users/login", signInForm, {
+      headers: this.formHeaders()
+    }).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+
+    this.http.get(this.url).subscribe({
       next: (res) => {
         console.log(res);
       },
