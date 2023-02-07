@@ -1,109 +1,104 @@
 <div class="home-container">
 
-  <swiper
-      [direction]="'vertical'"
-      [slidesPerView]="1"
-      [spaceBetween]="30"
-      [mousewheel]="true"
-      [pagination]="{
-          clickable: true
-      }"
-      class="swiper"
-  >
-    <ng-template swiperSlide *ngIf="!mobileScreen">
-      <div class="info-container">
-          <h1>KIM SEUNG BOO</h1>
-          <div class="name-box">
-            김 승 부
-          </div>
-        <mat-divider></mat-divider>
-        <span class="info-text" *ngFor="let info of infoList">
-          {{ info }}
-        </span>
-      </div>
+	<swiper [direction]="'vertical'" [slidesPerView]="1" [spaceBetween]="30" [mousewheel]="true"
+		[pagination]="{ clickable: true }" class="swiper">
+		<ng-template swiperSlide *ngIf="!mobileScreen">
+			<div class="info-container">
+				<h1>KIM SEUNG BOO</h1>
+				<div class="name-box">
+					김 승 부
+				</div>
+				<mat-divider></mat-divider>
+				<span class="info-text" *ngFor="let info of infoList">
+					{{ info }}
+				</span>
+			</div>
 
-      <div class="image-container">
-      </div>
+			<div class="image-container">
+			</div>
 
-      <div class="carrer-container">
-        <div class="carrer-box">
-          <span class="carrer-title">드라마</span>
-          <mat-divider></mat-divider>
-          <span class="carrer-text" *ngFor="let drama of dramaList">
-            {{ drama }}
-          </span>
-        </div>
+			<div class="carrer-container">
+				<div class="carrer-box">
+					<span class="carrer-title">드라마</span>
+					<mat-divider></mat-divider>
+					<span class="carrer-text" *ngFor="let drama of dramaList">
+						{{ drama }}
+					</span>
+				</div>
 
-        <div class="carrer-box">
-          <span class="carrer-title">단편 영화</span>
-          <mat-divider></mat-divider>
-          <span class="carrer-text" *ngFor="let movie of movieList">
-            {{ movie }}
-          </span>
-        </div>
+				<div class="carrer-box">
+					<span class="carrer-title">단편 영화</span>
+					<mat-divider></mat-divider>
+					<span class="carrer-text" *ngFor="let movie of movieList">
+						{{ movie }}
+					</span>
+				</div>
 
-        <div class="move-slide-box">
-          <mat-icon>
-            keyboard_double_arrow_down
-          </mat-icon>
-          <span>프로필 사진 슬라이드로 이동</span>
-        </div>
-      </div>
-    </ng-template>
-    <ng-template class="m-first-slide" swiperSlide *ngIf="mobileScreen">
-      <h1>Kim Seung Boo</h1>
-      <div class="background">
-        <div class="content-container">
-          <div class="m-info-box">
-            <span *ngFor="let info of infoList">
-              {{ info }}
-            </span>
-          </div>
-          <mat-divider></mat-divider>
-          <div class="m-carrer-box">
-            <span *ngFor="let drama of dramaList">
-              {{ drama }}
-            </span>
-            <span *ngFor="let movie of movieList">
-              {{ movie }}
-            </span>
-          </div>
-        </div>
-      </div>
+				<div class="move-slide-box">
+					<mat-icon>
+						keyboard_double_arrow_down
+					</mat-icon>
+					<span>프로필 사진 슬라이드로 이동</span>
+				</div>
+			</div>
+		</ng-template>
+		<ng-template class="m-first-slide" swiperSlide *ngIf="mobileScreen">
+			<h1>Kim Seung Boo</h1>
+			<div class="background">
+				<div class="content-container">
+					<div class="m-info-box">
+						<span *ngFor="let info of infoList">
+							{{ info }}
+						</span>
+					</div>
+					<mat-divider></mat-divider>
+					<div class="m-carrer-box">
+						<span *ngFor="let drama of dramaList">
+							{{ drama }}
+						</span>
+						<span *ngFor="let movie of movieList">
+							{{ movie }}
+						</span>
+					</div>
+				</div>
+			</div>
 
-      <div class="move-slide-box">
-        <mat-icon>
-          keyboard_double_arrow_down
-        </mat-icon>
-        <span>프로필 사진 슬라이드로 이동</span>
-      </div>
-    </ng-template>
-    <ng-template class="second-slide" swiperSlide>
-      <swiper 
-          [navigation]="true"
-          [effect]="'coverflow'"
-          [loop]="true"
-          [grabCursor]="true"
-          [centeredSlides]="true"
-          [slidesPerView]="'auto'"
-          [coverflowEffect]="{
+			<div class="move-slide-box">
+				<mat-icon>
+					keyboard_double_arrow_down
+				</mat-icon>
+				<span>프로필 사진 슬라이드로 이동</span>
+			</div>
+		</ng-template>
+		<ng-template class="second-slide" swiperSlide>
+			<swiper [navigation]="true" [effect]="'coverflow'" [loop]="true" [grabCursor]="true" [centeredSlides]="true"
+				[slidesPerView]="'auto'" [coverflowEffect]="{
             rotate: 50,
             stretch: 0,
             depth: 100,
             modifier: 1,
             slideShadows: true
-          }"
-          [pagination]="true"
-          class="mySwiper"
-        >
-          <ng-template class="second-swiper-slide" swiperSlide *ngFor="let imgPath of imgList">
-            <img [src]="imgPath">
-          </ng-template>
-        </swiper>
-    </ng-template>
-    <!-- <ng-template swiperSlide>
-      <h1>촬영 영상</h1>
-    </ng-template> -->
-  </swiper>
-  
+          }" [pagination]="true" class="mySwiper">
+				<ng-template class="second-swiper-slide" swiperSlide *ngFor="let imgPath of imgList">
+					<img [src]="imgPath">
+				</ng-template>
+			</swiper>
+		</ng-template>
+		<ng-template class="video-slide" swiperSlide>
+			<swiper [navigation]="true" [pagination]="true" class="mySwiper">
+				<ng-template swiperSlide>
+					<video controls width="80%">
+						<source src="../assets/videos/about.mp4" type="video/mp4">
+					</video>
+				</ng-template>
+				<ng-template swiperSlide>
+					<video controls width="80%">
+						<source src="../assets/videos/filming.mp4" type="video/mp4">
+					</video>
+				</ng-template>
+			</swiper>
+
+		</ng-template>
+	</swiper>
+
 </div>
