@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit {
   ];
 
   readonly dramaList = [
-    "- [법쩐] 성태 패거리 역 (방영 예정)",
-    "- [금혼령] 산적역 (방영 예정)"
+    "- [법쩐] 성태 패거리 역",
+    "- [금혼령] 산적역"
   ];
 
   readonly movieList = [
@@ -39,28 +39,28 @@ export class HomeComponent implements OnInit {
   mobileScreen: boolean = true;
 
   resizeObservable: Observable<Event> | null = null;
-	resizeSubscription: Subscription | null = null;
+  resizeSubscription: Subscription | null = null;
 
   constructor() { }
 
   ngOnInit(): void {
     if (window.innerWidth > 800) {
       this.mobileScreen = false;
-		}
+    }
 
     /* 창 크기를 추적하여 800px 이상의 창크기에서는 웹 스크린,
-		  이하는 모바일 스크린이 보이도록 설정. */
-		this.resizeObservable = fromEvent(window, 'resize');
-		this.resizeSubscription = this.resizeObservable.subscribe( () => {
-			if(window.innerWidth > 800) {
-       this.mobileScreen = false;
-			} else {
+      이하는 모바일 스크린이 보이도록 설정. */
+    this.resizeObservable = fromEvent(window, 'resize');
+    this.resizeSubscription = this.resizeObservable.subscribe(() => {
+      if (window.innerWidth > 800) {
+        this.mobileScreen = false;
+      } else {
         this.mobileScreen = true;
-			}
-		});
+      }
+    });
 
-    for(let i = 0; i < 8; i ++) {
-      this.imgList[i] = `../assets/images/photo_${i+1}.jpg`;
+    for (let i = 0; i < 8; i++) {
+      this.imgList[i] = `../assets/images/photo_${i + 1}.jpg`;
     }
   }
 
